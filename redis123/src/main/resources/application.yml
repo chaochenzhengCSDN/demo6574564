@@ -1,0 +1,24 @@
+server:
+  port: 8080
+spring:
+  datasource:
+      url: jdbc:mysql://localhost:3306/zcc?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: 1234
+  devtools:
+    restart:
+      enabled: true
+  cache:
+    ehcache:
+      config: classpath:config/echcache.xml
+logging:
+  path: classpath:log4j-spring.xml
+  logging:
+    level:
+      root: info
+      com.provy.guard: debug
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml

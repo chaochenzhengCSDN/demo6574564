@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: dev,redis,common,error,mai
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    jedis:
+      pool:
+        max-active: 100
+        max-idle: 10
+        max-wait: 100000
+    timeout: 5000
+
+###指定扫描日志配置l
+# debug: true
+logging:
+  config: classpath:log4j2.xml
+###MyBatis扫描文件位置
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+###Pagehelper配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+
+
+
